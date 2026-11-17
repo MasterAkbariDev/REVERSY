@@ -1,38 +1,36 @@
 # REVERSY
 
-Cyberpunk Othello (Reversi) with a minimax + alpha-beta AI.
+A browser-based Reversi game with a neon interface and a computer opponent powered by minimax search.
 
-## Stack
+## Highlights
 
-- Vanilla JS + Vite
-- Minimax search with alpha-beta pruning and positional heuristics
-- Animated cyberpunk UI (scanlines, disc flips, HUD glow)
+- Play as black against an AI with three search-depth settings.
+- See valid moves, disc flips, scores, and the current game state.
+- Explore a game engine separated from the interface and an alpha-beta search with positional heuristics.
 
-## Scripts
+## Getting started
+
+Requires Node.js and npm.
 
 ```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build
-npm run preview
+git clone https://github.com/MasterAkbariDev/REVERSY.git
+cd REVERSY
+npm ci
+npm run dev
 ```
 
-## Controls
+Open the local URL printed by Vite. Choose a difficulty and click a highlighted square to play. **New Game** resets the board.
 
-- Click a highlighted cell to place a disc (you are Neon-Magenta / black)
-- Easy / Medium / Hard sets AI search depth (2 / 4 / 6)
-- New Game resets the board
+## Development
 
-## Project layout
-
+```bash
+npm run build      # production bundle in dist/
+npm run preview    # preview a production build
 ```
-index.html
-vite.config.js
-public/favicon.svg
-src/
-  main.js          # UI + game loop
-  game/board.js    # rules, flips, scoring
-  ai/minimax.js    # alpha-beta AI
-  styles/main.css  # cyberpunk theme + animations
-```
-# REVERSY
+
+| Path | Purpose |
+| --- | --- |
+| `src/game/board.js` | Board rules, legal moves, flips, and scoring |
+| `src/ai/minimax.js` | Minimax search, alpha-beta pruning, and evaluation |
+| `src/main.js` | Interface and game loop |
+| `src/styles/main.css` | Visual theme and animations |
